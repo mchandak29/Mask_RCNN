@@ -286,7 +286,7 @@ class CocoDataset(utils.Dataset):
         """
         segm = ann['segmentation']
         if isinstance(segm, list):
-            # polygon -- a single object might consist of multiple parts
+            # -- a single object might consist of multiple parts
             # we merge all parts into one mask rle code
             rles = maskUtils.frPyObjects(segm, height, width)
             rle = maskUtils.merge(rles)
